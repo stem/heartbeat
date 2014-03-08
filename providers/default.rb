@@ -27,7 +27,7 @@ action :create do
   authkeys = new_resource.authkeys.is_a?(Array) ? new_resource.authkeys : [new_resource.authkeys]
 
   template "#{node['heartbeat']['conf_dir']}/ha.cf" do
-    cookbook 'heartbeat'
+    cookbook new_resource.ha_cf_cookbook || 'heartbeat'
     source 'ha.cf.erb'
     mode '644'
     owner 'root'
