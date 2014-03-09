@@ -33,7 +33,7 @@ action :create do
     owner 'root'
     group 'root'
     notifies :restart, 'service[heartbeat]'
-    variables heartbeat: new_resource, nodes: nodes, interface: interface
+    variables heartbeat: new_resource, nodes: nodes.sort_by{|n| n['macaddress']}, interface: interface
   end
 
   template "#{node['heartbeat']['conf_dir']}/authkeys" do
