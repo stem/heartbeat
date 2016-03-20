@@ -1,8 +1,8 @@
 #
 # Cookbook Name:: heartbeat
-# Resource:: ipaddr
+# Provider:: ipaddr
 #
-# Copyright 2009-2016, Chef Software, Inc.
+# Copyright 2009-2012, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +17,6 @@
 # limitations under the License.
 #
 
-default_action :nothing
-
-attribute :ip, kind_of: String, name_attribute: true
-
-def to_resource
-  ip
+# This space left intentionally blank
+action :create do
 end
