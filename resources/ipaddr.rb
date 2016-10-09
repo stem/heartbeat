@@ -17,10 +17,12 @@
 # limitations under the License.
 #
 
-default_action :nothing
-
-attribute :ip, kind_of: String, name_attribute: true
+resource_name :heartbeat_ipaddr
+property :ip, String, name_property: true
 
 def to_resource
   ip
+end
+
+action :create do
 end
